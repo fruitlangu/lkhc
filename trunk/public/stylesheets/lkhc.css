@@ -1,0 +1,59 @@
+body {
+	background: #ffffff;
+}
+#banner {
+	border-bottom: 5px solid #4A5D64;
+	background: #4F4539;
+	color: white;
+	font-size: 200%;
+	height: 40px;
+	padding-top: 10px;
+	padding-left: 10px;
+	text-align: center;
+}
+
+#blurb {
+	border: 1px dotted #999;
+	padding: 20px;
+}
+
+p {
+	margin-bottom: 10px;
+}
+
+h1 {
+	font-size: 140%;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+h2 {
+	font-size: 120%;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+#leftpage {
+	padding-left: 20px;
+	
+}
+
+#rightpage {
+
+}
+
+#ft {
+	margin-top: 20px;
+}
+
+#menu {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	text-align: center;
+}
+
+#menu ul li {
+	float: left;
+	margin-left: 10px;
+}

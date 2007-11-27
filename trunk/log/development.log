@@ -1,0 +1,801 @@
+
+  [4;36;1mSQL (0.001437)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.001021)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000379)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateRiders (1)
+  [4;36;1mSQL (0.001312)[0m   [0;1mCREATE TABLE riders ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "photo" varchar(255) DEFAULT NULL, "lkhc_number" integer DEFAULT NULL, "team_id" integer DEFAULT NULL, "category_id" integer DEFAULT NULL, "gender" varchar(255) DEFAULT NULL, "url" varchar(255) DEFAULT NULL, "age" varchar(255) DEFAULT NULL, "weight" varchar(255) DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000760)[0m   [0mUPDATE schema_info SET version = 1[0m
+  [4;36;1mSQL (0.000171)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeries (2)
+  [4;35;1mSQL (0.000878)[0m   [0mCREATE TABLE series ("id" INTEGER PRIMARY KEY NOT NULL, "year" integer DEFAULT NULL, "blurb" blob DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000801)[0m   [0;1mUPDATE schema_info SET version = 2[0m
+  [4;35;1mSQL (0.000157)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesEvents (3)
+  [4;36;1mSQL (0.000973)[0m   [0;1mCREATE TABLE series_events ("id" INTEGER PRIMARY KEY NOT NULL, "series_id" integer DEFAULT NULL, "climb_id" integer DEFAULT NULL, "scheduled_date" date DEFAULT NULL, "registration_start" datetime DEFAULT NULL, "registration_end" datetime DEFAULT NULL, "event_start" date DEFAULT NULL, "cost" float DEFAULT NULL, "blurb" blob DEFAULT NULL, "coordinator" varchar(255) DEFAULT NULL, "staging_area_url" varchar(255) DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000847)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000176)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateClimbs (4)
+  [4;35;1mSQL (0.001495)[0m   [0mCREATE TABLE climbs ("id" INTEGER PRIMARY KEY NOT NULL, "title" varchar(255) DEFAULT NULL, "location" varchar(255) DEFAULT NULL, "max_altitude" integer DEFAULT NULL, "total_climbing" integer DEFAULT NULL, "average_gradient" integer DEFAULT NULL, "max_gradient" integer DEFAULT NULL, "distance" integer DEFAULT NULL, "blurb" blob DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000819)[0m   [0;1mUPDATE schema_info SET version = 4[0m
+  [4;35;1mSQL (0.000202)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateTeams (5)
+  [4;36;1mSQL (0.000915)[0m   [0;1mCREATE TABLE teams ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL, "url" varchar(255) DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000841)[0m   [0mUPDATE schema_info SET version = 5[0m
+  [4;36;1mSQL (0.000235)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateCategories (6)
+  [4;35;1mSQL (0.000946)[0m   [0mCREATE TABLE categories ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL, "url" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000801)[0m   [0;1mUPDATE schema_info SET version = 6[0m
+  [4;35;1mSQL (0.000161)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesEventResults (7)
+  [4;36;1mSQL (0.001064)[0m   [0;1mCREATE TABLE series_event_results ("id" INTEGER PRIMARY KEY NOT NULL, "rider_id" integer DEFAULT NULL, "time_elapsed" float DEFAULT NULL, "rider_name" varchar(255) DEFAULT NULL, "rider_team" varchar(255) DEFAULT NULL, "rider_category" varchar(255) DEFAULT NULL, "vam" float DEFAULT NULL, "speed" float DEFAULT NULL, "score" float DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000780)[0m   [0mUPDATE schema_info SET version = 7[0m
+  [4;36;1mSQL (0.000284)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateVolunteers (8)
+  [4;35;1mSQL (0.001396)[0m   [0mCREATE TABLE volunteers ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "rider_id" integer DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000930)[0m   [0;1mUPDATE schema_info SET version = 8[0m
+  [4;35;1mSQL (0.000238)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesVolunteers (9)
+  [4;36;1mSQL (0.001183)[0m   [0;1mCREATE TABLE series_volunteers ("id" INTEGER PRIMARY KEY NOT NULL, "volunteer_id" integer DEFAULT NULL, "series_event_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000808)[0m   [0mUPDATE schema_info SET version = 9[0m
+  [4;36;1mSQL (0.000202)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000504)[0m   [0mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.000056)[0m   [0;1mPRAGMA index_list(categories)[0m
+  [4;35;1mSQL (0.000052)[0m   [0mPRAGMA index_list(climbs)[0m
+  [4;36;1mSQL (0.000064)[0m   [0;1mPRAGMA index_list(riders)[0m
+  [4;35;1mSQL (0.000053)[0m   [0mPRAGMA index_list(series)[0m
+  [4;36;1mSQL (0.000053)[0m   [0;1mPRAGMA index_list(series_event_results)[0m
+  [4;35;1mSQL (0.000052)[0m   [0mPRAGMA index_list(series_events)[0m
+  [4;36;1mSQL (0.000053)[0m   [0;1mPRAGMA index_list(series_volunteers)[0m
+  [4;35;1mSQL (0.000054)[0m   [0mPRAGMA index_list(teams)[0m
+  [4;36;1mSQL (0.000050)[0m   [0;1mPRAGMA index_list(volunteers)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000335)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000163)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000261)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesVolunteers (9)
+  [4;35;1mSQL (0.001175)[0m   [0mDROP TABLE series_volunteers[0m
+  [4;36;1mSQL (0.000708)[0m   [0;1mUPDATE schema_info SET version = 8[0m
+  [4;35;1mSQL (0.000170)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateVolunteers (8)
+  [4;36;1mSQL (0.000934)[0m   [0;1mDROP TABLE volunteers[0m
+  [4;35;1mSQL (0.000670)[0m   [0mUPDATE schema_info SET version = 7[0m
+  [4;36;1mSQL (0.000157)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesEventResults (7)
+  [4;35;1mSQL (0.001115)[0m   [0mDROP TABLE series_event_results[0m
+  [4;36;1mSQL (0.000941)[0m   [0;1mUPDATE schema_info SET version = 6[0m
+  [4;35;1mSQL (0.000420)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateCategories (6)
+  [4;36;1mSQL (0.001113)[0m   [0;1mDROP TABLE categories[0m
+  [4;35;1mSQL (0.000750)[0m   [0mUPDATE schema_info SET version = 5[0m
+  [4;36;1mSQL (0.000180)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateTeams (5)
+  [4;35;1mSQL (0.000976)[0m   [0mDROP TABLE teams[0m
+  [4;36;1mSQL (0.000869)[0m   [0;1mUPDATE schema_info SET version = 4[0m
+  [4;35;1mSQL (0.000270)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateClimbs (4)
+  [4;36;1mSQL (0.000927)[0m   [0;1mDROP TABLE climbs[0m
+  [4;35;1mSQL (0.000702)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000161)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesEvents (3)
+  [4;35;1mSQL (0.000876)[0m   [0mDROP TABLE series_events[0m
+  [4;36;1mSQL (0.000714)[0m   [0;1mUPDATE schema_info SET version = 2[0m
+  [4;35;1mSQL (0.000159)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateSeries (2)
+  [4;36;1mSQL (0.000950)[0m   [0;1mDROP TABLE series[0m
+  [4;35;1mSQL (0.000776)[0m   [0mUPDATE schema_info SET version = 1[0m
+  [4;36;1mSQL (0.000212)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateRiders (1)
+  [4;35;1mSQL (0.001011)[0m   [0mDROP TABLE riders[0m
+  [4;36;1mSQL (0.000725)[0m   [0;1mUPDATE schema_info SET version = 0[0m
+  [4;35;1mSQL (0.000198)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000159)[0m   [0;1mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000353)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateRiders (1)
+  [4;35;1mSQL (0.001206)[0m   [0mCREATE TABLE riders ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "photo" varchar(255) DEFAULT NULL, "lkhc_number" integer DEFAULT NULL, "team_id" integer DEFAULT NULL, "category_id" integer DEFAULT NULL, "gender" varchar(255) DEFAULT NULL, "url" varchar(255) DEFAULT NULL, "age" varchar(255) DEFAULT NULL, "weight" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000713)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000170)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateSeries (2)
+  [4;36;1mSQL (0.000881)[0m   [0;1mCREATE TABLE series ("id" INTEGER PRIMARY KEY NOT NULL, "year" integer DEFAULT NULL, "blurb" blob DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000695)[0m   [0mUPDATE schema_info SET version = 2[0m
+  [4;36;1mSQL (0.000161)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesEvents (3)
+  [4;35;1mSQL (0.000948)[0m   [0mCREATE TABLE series_events ("id" INTEGER PRIMARY KEY NOT NULL, "series_id" integer DEFAULT NULL, "climb_id" integer DEFAULT NULL, "scheduled_date" date DEFAULT NULL, "registration_start" datetime DEFAULT NULL, "registration_end" datetime DEFAULT NULL, "event_start" date DEFAULT NULL, "cost" float DEFAULT NULL, "blurb" blob DEFAULT NULL, "coordinator" varchar(255) DEFAULT NULL, "staging_area_url" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000742)[0m   [0;1mUPDATE schema_info SET version = 3[0m
+  [4;35;1mSQL (0.000340)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateClimbs (4)
+  [4;36;1mSQL (0.013454)[0m   [0;1mCREATE TABLE climbs ("id" INTEGER PRIMARY KEY NOT NULL, "title" varchar(255) DEFAULT NULL, "location" varchar(255) DEFAULT NULL, "max_altitude" integer DEFAULT NULL, "total_climbing" integer DEFAULT NULL, "average_gradient" integer DEFAULT NULL, "max_gradient" integer DEFAULT NULL, "distance" integer DEFAULT NULL, "blurb" blob DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000867)[0m   [0mUPDATE schema_info SET version = 4[0m
+  [4;36;1mSQL (0.000244)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateTeams (5)
+  [4;35;1mSQL (0.001245)[0m   [0mCREATE TABLE teams ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL, "url" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000853)[0m   [0;1mUPDATE schema_info SET version = 5[0m
+  [4;35;1mSQL (0.000222)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateCategories (6)
+  [4;36;1mSQL (0.001160)[0m   [0;1mCREATE TABLE categories ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL, "url" varchar(255) DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000816)[0m   [0mUPDATE schema_info SET version = 6[0m
+  [4;36;1mSQL (0.000161)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesEventResults (7)
+  [4;35;1mSQL (0.001373)[0m   [0mCREATE TABLE series_event_results ("id" INTEGER PRIMARY KEY NOT NULL, "rider_id" integer DEFAULT NULL, "series_event_id" integer DEFAULT NULL, "time_elapsed" float DEFAULT NULL, "rider_name" varchar(255) DEFAULT NULL, "rider_team" varchar(255) DEFAULT NULL, "rider_category" varchar(255) DEFAULT NULL, "vam" float DEFAULT NULL, "speed" float DEFAULT NULL, "score" float DEFAULT NULL) [0m
+  [4;36;1mSQL (0.001671)[0m   [0;1mUPDATE schema_info SET version = 7[0m
+  [4;35;1mSQL (0.000295)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateVolunteers (8)
+  [4;36;1mSQL (0.001280)[0m   [0;1mCREATE TABLE volunteers ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "rider_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000739)[0m   [0mUPDATE schema_info SET version = 8[0m
+  [4;36;1mSQL (0.000167)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesVolunteers (9)
+  [4;35;1mSQL (0.001021)[0m   [0mCREATE TABLE series_volunteers ("id" INTEGER PRIMARY KEY NOT NULL, "volunteer_id" integer DEFAULT NULL, "series_event_id" integer DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000749)[0m   [0;1mUPDATE schema_info SET version = 9[0m
+  [4;35;1mSQL (0.000205)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000518)[0m   [0;1mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;35;1mSQL (0.000057)[0m   [0mPRAGMA index_list(categories)[0m
+  [4;36;1mSQL (0.000051)[0m   [0;1mPRAGMA index_list(climbs)[0m
+  [4;35;1mSQL (0.000053)[0m   [0mPRAGMA index_list(riders)[0m
+  [4;36;1mSQL (0.000054)[0m   [0;1mPRAGMA index_list(series)[0m
+  [4;35;1mSQL (0.000052)[0m   [0mPRAGMA index_list(series_event_results)[0m
+  [4;36;1mSQL (0.000060)[0m   [0;1mPRAGMA index_list(series_events)[0m
+  [4;35;1mSQL (0.000052)[0m   [0mPRAGMA index_list(series_volunteers)[0m
+  [4;36;1mSQL (0.000051)[0m   [0;1mPRAGMA index_list(teams)[0m
+  [4;35;1mSQL (0.000051)[0m   [0mPRAGMA index_list(volunteers)[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2007-11-25 21:21:29) [GET]
+  Session ID: 87766edcda33f6da80361e98ba62f521
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/" with {:method=>:get}):
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2007-11-25 21:21:32) [GET]
+  Session ID: 87766edcda33f6da80361e98ba62f521
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/climbs" with {:method=>:get}):
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing ClimbController#index (for 127.0.0.1 at 2007-11-25 21:21:33) [GET]
+  Session ID: 87766edcda33f6da80361e98ba62f521
+  Parameters: {"action"=>"index", "controller"=>"climb"}
+  [4;36;1mSQL (0.000182)[0m   [0;1mSELECT count(*) AS count_all FROM climbs [0m
+  [4;35;1mClimb Load (0.000117)[0m   [0mSELECT * FROM climbs LIMIT 10 OFFSET 0[0m
+Rendering layoutfalseactionlist within layouts/climb
+Rendering climb/list
+Completed in 0.11410 (8 reqs/sec) | Rendering: 0.00361 (3%) | DB: 0.00030 (0%) | 200 OK [http://localhost/climb]
+
+
+Processing ClimbController#index (for 127.0.0.1 at 2007-11-25 21:24:34) [GET]
+  Session ID: 87766edcda33f6da80361e98ba62f521
+  Parameters: {"action"=>"index", "controller"=>"climb"}
+  [4;36;1mSQL (0.000169)[0m   [0;1mSELECT count(*) AS count_all FROM climbs [0m
+  [4;35;1mClimb Load (0.000111)[0m   [0mSELECT * FROM climbs LIMIT 10 OFFSET 0[0m
+Rendering layoutfalseactionlist within layouts/climb
+Rendering climb/list
+Completed in 0.00985 (101 reqs/sec) | Rendering: 0.00151 (15%) | DB: 0.00028 (2%) | 200 OK [http://localhost/climb]
+
+
+Processing ClimbController#index (for 127.0.0.1 at 2007-11-25 21:24:35) [GET]
+  Session ID: 87766edcda33f6da80361e98ba62f521
+  Parameters: {"action"=>"index", "controller"=>"climb"}
+  [4;36;1mSQL (0.000165)[0m   [0;1mSELECT count(*) AS count_all FROM climbs [0m
+  [4;35;1mClimb Load (0.000109)[0m   [0mSELECT * FROM climbs LIMIT 10 OFFSET 0[0m
+Rendering layoutfalseactionlist within layouts/climb
+Rendering climb/list
+Completed in 0.00971 (102 reqs/sec) | Rendering: 0.00147 (15%) | DB: 0.00027 (2%) | 200 OK [http://localhost/climb]
+
+
+Processing ClimbController#new (for 127.0.0.1 at 2007-11-25 21:24:38) [GET]
+  Session ID: 87766edcda33f6da80361e98ba62f521
+  Parameters: {"action"=>"new", "controller"=>"climb"}
+Rendering  within layouts/climb
+Rendering climb/new
+Rendered climb/_form (0.00204)
+Completed in 0.01238 (80 reqs/sec) | Rendering: 0.00452 (36%) | DB: 0.00000 (0%) | 200 OK [http://localhost/climb/new]
+
+
+Processing ClimbController#index (for 127.0.0.1 at 2007-11-25 21:24:45) [GET]
+  Session ID: 87766edcda33f6da80361e98ba62f521
+  Parameters: {"action"=>"index", "controller"=>"climb"}
+  [4;36;1mSQL (0.000182)[0m   [0;1mSELECT count(*) AS count_all FROM climbs [0m
+  [4;35;1mClimb Load (0.000124)[0m   [0mSELECT * FROM climbs LIMIT 10 OFFSET 0[0m
+Rendering layoutfalseactionlist within layouts/climb
+Rendering climb/list
+Completed in 0.05326 (18 reqs/sec) | Rendering: 0.00360 (6%) | DB: 0.00031 (0%) | 200 OK [http://localhost/climb]
+
+
+Processing ClimbController#index (for 127.0.0.1 at 2007-11-25 21:24:53) [GET]
+  Session ID: 87766edcda33f6da80361e98ba62f521
+  Parameters: {"action"=>"index", "controller"=>"climb"}
+  [4;36;1mSQL (0.000164)[0m   [0;1mSELECT count(*) AS count_all FROM climbs [0m
+  [4;35;1mClimb Load (0.000112)[0m   [0mSELECT * FROM climbs LIMIT 10 OFFSET 0[0m
+Rendering layoutfalseactionlist within layouts/application
+Rendering climb/list
+Completed in 0.01121 (89 reqs/sec) | Rendering: 0.00255 (22%) | DB: 0.00028 (2%) | 200 OK [http://localhost/climb]
+
+
+Processing ClimbController#new (for 127.0.0.1 at 2007-11-25 21:24:56) [GET]
+  Session ID: 87766edcda33f6da80361e98ba62f521
+  Parameters: {"action"=>"new", "controller"=>"climb"}
+Rendering  within layouts/application
+Rendering climb/new
+Rendered climb/_form (0.00201)
+Completed in 0.01261 (79 reqs/sec) | Rendering: 0.00459 (36%) | DB: 0.00000 (0%) | 200 OK [http://localhost/climb/new]
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000298)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000157)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000229)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesVolunteers (9)
+  [4;35;1mSQL (0.001194)[0m   [0mDROP TABLE series_volunteers[0m
+  [4;36;1mSQL (0.000712)[0m   [0;1mUPDATE schema_info SET version = 8[0m
+  [4;35;1mSQL (0.000173)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateVolunteers (8)
+  [4;36;1mSQL (0.000924)[0m   [0;1mDROP TABLE volunteers[0m
+  [4;35;1mSQL (0.000705)[0m   [0mUPDATE schema_info SET version = 7[0m
+  [4;36;1mSQL (0.000156)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesEventResults (7)
+  [4;35;1mSQL (0.000921)[0m   [0mDROP TABLE series_event_results[0m
+  [4;36;1mSQL (0.000705)[0m   [0;1mUPDATE schema_info SET version = 6[0m
+  [4;35;1mSQL (0.000184)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateCategories (6)
+  [4;36;1mSQL (0.001220)[0m   [0;1mDROP TABLE categories[0m
+  [4;35;1mSQL (0.000925)[0m   [0mUPDATE schema_info SET version = 5[0m
+  [4;36;1mSQL (0.000244)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateTeams (5)
+  [4;35;1mSQL (0.001133)[0m   [0mDROP TABLE teams[0m
+  [4;36;1mSQL (0.000795)[0m   [0;1mUPDATE schema_info SET version = 4[0m
+  [4;35;1mSQL (0.000186)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateClimbs (4)
+  [4;36;1mSQL (0.000967)[0m   [0;1mDROP TABLE climbs[0m
+  [4;35;1mSQL (0.000721)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000171)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesEvents (3)
+  [4;35;1mSQL (0.000915)[0m   [0mDROP TABLE series_events[0m
+  [4;36;1mSQL (0.000741)[0m   [0;1mUPDATE schema_info SET version = 2[0m
+  [4;35;1mSQL (0.000169)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateSeries (2)
+  [4;36;1mSQL (0.000876)[0m   [0;1mDROP TABLE series[0m
+  [4;35;1mSQL (0.000738)[0m   [0mUPDATE schema_info SET version = 1[0m
+  [4;36;1mSQL (0.000174)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateRiders (1)
+  [4;35;1mSQL (0.000947)[0m   [0mDROP TABLE riders[0m
+  [4;36;1mSQL (0.000779)[0m   [0;1mUPDATE schema_info SET version = 0[0m
+  [4;35;1mSQL (0.000201)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000162)[0m   [0;1mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000351)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateRiders (1)
+  [4;35;1mSQL (0.001200)[0m   [0mCREATE TABLE riders ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "photo" varchar(255) DEFAULT NULL, "lkhc_number" integer DEFAULT NULL, "team_id" integer DEFAULT NULL, "category_id" integer DEFAULT NULL, "gender" varchar(255) DEFAULT NULL, "url" varchar(255) DEFAULT NULL, "age" varchar(255) DEFAULT NULL, "weight" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000668)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000170)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateSeries (2)
+  [4;36;1mSQL (0.000849)[0m   [0;1mCREATE TABLE series ("id" INTEGER PRIMARY KEY NOT NULL, "year" integer DEFAULT NULL, "blurb" text DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000650)[0m   [0mUPDATE schema_info SET version = 2[0m
+  [4;36;1mSQL (0.000156)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesEvents (3)
+  [4;35;1mSQL (0.000909)[0m   [0mCREATE TABLE series_events ("id" INTEGER PRIMARY KEY NOT NULL, "series_id" integer DEFAULT NULL, "climb_id" integer DEFAULT NULL, "scheduled_date" date DEFAULT NULL, "registration_start" datetime DEFAULT NULL, "registration_end" datetime DEFAULT NULL, "event_start" date DEFAULT NULL, "cost" float DEFAULT NULL, "blurb" text DEFAULT NULL, "coordinator" varchar(255) DEFAULT NULL, "staging_area_url" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000665)[0m   [0;1mUPDATE schema_info SET version = 3[0m
+  [4;35;1mSQL (0.000333)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateClimbs (4)
+  [4;36;1mSQL (0.001279)[0m   [0;1mCREATE TABLE climbs ("id" INTEGER PRIMARY KEY NOT NULL, "title" varchar(255) DEFAULT NULL, "location" varchar(255) DEFAULT NULL, "max_altitude" integer DEFAULT NULL, "total_climbing" integer DEFAULT NULL, "average_gradient" integer DEFAULT NULL, "max_gradient" integer DEFAULT NULL, "distance" integer DEFAULT NULL, "blurb" text DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000745)[0m   [0mUPDATE schema_info SET version = 4[0m
+  [4;36;1mSQL (0.000204)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateTeams (5)
+  [4;35;1mSQL (0.000924)[0m   [0mCREATE TABLE teams ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL, "url" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000715)[0m   [0;1mUPDATE schema_info SET version = 5[0m
+  [4;35;1mSQL (0.000162)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateCategories (6)
+  [4;36;1mSQL (0.000950)[0m   [0;1mCREATE TABLE categories ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL, "url" varchar(255) DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000729)[0m   [0mUPDATE schema_info SET version = 6[0m
+  [4;36;1mSQL (0.000155)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesEventResults (7)
+  [4;35;1mSQL (0.001080)[0m   [0mCREATE TABLE series_event_results ("id" INTEGER PRIMARY KEY NOT NULL, "rider_id" integer DEFAULT NULL, "series_event_id" integer DEFAULT NULL, "time_elapsed" float DEFAULT NULL, "rider_name" varchar(255) DEFAULT NULL, "rider_team" varchar(255) DEFAULT NULL, "rider_category" varchar(255) DEFAULT NULL, "vam" float DEFAULT NULL, "speed" float DEFAULT NULL, "score" float DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000706)[0m   [0;1mUPDATE schema_info SET version = 7[0m
+  [4;35;1mSQL (0.000159)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateVolunteers (8)
+  [4;36;1mSQL (0.001188)[0m   [0;1mCREATE TABLE volunteers ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "rider_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000823)[0m   [0mUPDATE schema_info SET version = 8[0m
+  [4;36;1mSQL (0.000218)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesVolunteers (9)
+  [4;35;1mSQL (0.000996)[0m   [0mCREATE TABLE series_volunteers ("id" INTEGER PRIMARY KEY NOT NULL, "volunteer_id" integer DEFAULT NULL, "series_event_id" integer DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000756)[0m   [0;1mUPDATE schema_info SET version = 9[0m
+  [4;35;1mSQL (0.000197)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000504)[0m   [0;1mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;35;1mSQL (0.000056)[0m   [0mPRAGMA index_list(categories)[0m
+  [4;36;1mSQL (0.000052)[0m   [0;1mPRAGMA index_list(climbs)[0m
+  [4;35;1mSQL (0.000052)[0m   [0mPRAGMA index_list(riders)[0m
+  [4;36;1mSQL (0.000051)[0m   [0;1mPRAGMA index_list(series)[0m
+  [4;35;1mSQL (0.000068)[0m   [0mPRAGMA index_list(series_event_results)[0m
+  [4;36;1mSQL (0.000061)[0m   [0;1mPRAGMA index_list(series_events)[0m
+  [4;35;1mSQL (0.000054)[0m   [0mPRAGMA index_list(series_volunteers)[0m
+  [4;36;1mSQL (0.000050)[0m   [0;1mPRAGMA index_list(teams)[0m
+  [4;35;1mSQL (0.000050)[0m   [0mPRAGMA index_list(volunteers)[0m
+
+
+Processing ClimbController#new (for 127.0.0.1 at 2007-11-25 21:26:44) [GET]
+  Session ID: 87766edcda33f6da80361e98ba62f521
+  Parameters: {"action"=>"new", "controller"=>"climb"}
+Rendering  within layouts/climb
+Rendering climb/new
+Rendered climb/_form (0.00203)
+Completed in 0.01284 (77 reqs/sec) | Rendering: 0.00493 (38%) | DB: 0.00000 (0%) | 200 OK [http://localhost/climb/new]
+
+
+Processing ClimbController#new (for 127.0.0.1 at 2007-11-25 21:26:51) [GET]
+  Session ID: 87766edcda33f6da80361e98ba62f521
+  Parameters: {"action"=>"new", "controller"=>"climb"}
+Rendering  within layouts/application
+Rendering climb/new
+Rendered climb/_form (0.00106)
+Completed in 0.01072 (93 reqs/sec) | Rendering: 0.00302 (28%) | DB: 0.00000 (0%) | 200 OK [http://localhost/climb/new]
+  [4;36;1mRider Load (0.000147)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '436') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000140)[0m   [0mSELECT * FROM categories WHERE (categories."name" = '4') LIMIT 1[0m
+  [4;36;1mSQL (0.000453)[0m   [0;1mINSERT INTO categories ("name", "url") VALUES('4', NULL)[0m
+  [4;35;1mCategory Load (0.000128)[0m   [0mSELECT * FROM categories WHERE (categories."name" = 'SJBC') LIMIT 1[0m
+  [4;36;1mSQL (0.000225)[0m   [0;1mINSERT INTO categories ("name", "url") VALUES('SJBC', NULL)[0m
+  [4;36;1mRider Load (0.000154)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '436') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000227)[0m   [0mSELECT * FROM categories WHERE (categories."name" = '4') LIMIT 1[0m
+  [4;36;1mTeam Load (0.000125)[0m   [0;1mSELECT * FROM teams WHERE (teams."name" = 'SJBC') LIMIT 1[0m
+  [4;35;1mSQL (0.000413)[0m   [0mINSERT INTO teams ("name", "url") VALUES('SJBC', NULL)[0m
+  [4;36;1mSQL (0.000230)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Matt Batz', NULL, 1, NULL, 436, NULL, 'Male', 1, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000159)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '321') LIMIT 1[0m
+  [4;36;1mSQL (0.000223)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Geoff Patterson', NULL, NULL, NULL, 321, NULL, 'Male', NULL, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000137)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '342') LIMIT 1[0m
+  [4;36;1mCategory Load (0.000104)[0m   [0;1mSELECT * FROM categories WHERE (categories."name" = '60+') LIMIT 1[0m
+  [4;35;1mSQL (0.000202)[0m   [0mINSERT INTO categories ("name", "url") VALUES('60+', NULL)[0m
+  [4;36;1mSQL (0.000254)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Jim Wholey', NULL, NULL, NULL, 342, NULL, 'Male', 3, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000143)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '350') LIMIT 1[0m
+  [4;36;1mCategory Load (0.000103)[0m   [0;1mSELECT * FROM categories WHERE (categories."name" = '20+') LIMIT 1[0m
+  [4;35;1mSQL (0.000200)[0m   [0mINSERT INTO categories ("name", "url") VALUES('20+', NULL)[0m
+  [4;36;1mSQL (0.000221)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Jason Rodak', NULL, NULL, NULL, 350, NULL, 'Male', 4, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000144)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '355') LIMIT 1[0m
+  [4;36;1mSQL (0.000215)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Martin Brandt', NULL, NULL, NULL, 355, NULL, 'Unknown', NULL, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000140)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '359') LIMIT 1[0m
+  [4;36;1mSQL (0.000222)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('James Keller', NULL, NULL, NULL, 359, NULL, 'Male', NULL, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000143)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '363') LIMIT 1[0m
+  [4;36;1mTeam Load (0.000219)[0m   [0;1mSELECT * FROM teams WHERE (teams."name" = 'SJBC') LIMIT 1[0m
+  [4;35;1mSQL (0.000225)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Ricky Lucero', NULL, 1, NULL, 363, NULL, 'Male', NULL, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000162)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '367') LIMIT 1[0m
+  [4;35;1mTeam Load (0.000104)[0m   [0mSELECT * FROM teams WHERE (teams."name" = 'TNT') LIMIT 1[0m
+  [4;36;1mSQL (0.000218)[0m   [0;1mINSERT INTO teams ("name", "url") VALUES('TNT', NULL)[0m
+  [4;35;1mSQL (0.000460)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Sarah Elson', NULL, 2, NULL, 367, NULL, 'Female', NULL, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000174)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '371') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000103)[0m   [0mSELECT * FROM categories WHERE (categories."name" = 'Fat and slow') LIMIT 1[0m
+  [4;36;1mSQL (0.000225)[0m   [0;1mINSERT INTO categories ("name", "url") VALUES('Fat and slow', NULL)[0m
+  [4;35;1mTeam Load (0.000236)[0m   [0mSELECT * FROM teams WHERE (teams."name" = 'SJBC') LIMIT 1[0m
+  [4;36;1mSQL (0.000226)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('David Knight', NULL, 1, NULL, 371, NULL, 'Male', 5, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000152)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '375') LIMIT 1[0m
+  [4;36;1mCategory Load (0.000235)[0m   [0;1mSELECT * FROM categories WHERE (categories."name" = '4') LIMIT 1[0m
+  [4;35;1mTeam Load (0.000109)[0m   [0mSELECT * FROM teams WHERE (teams."name" = 'LGBRC') LIMIT 1[0m
+  [4;36;1mSQL (0.000221)[0m   [0;1mINSERT INTO teams ("name", "url") VALUES('LGBRC', NULL)[0m
+  [4;35;1mSQL (0.000261)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Phil Alne', NULL, 3, NULL, 375, NULL, 'Male', 1, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000163)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '379') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000107)[0m   [0mSELECT * FROM categories WHERE (categories."name" = '3') LIMIT 1[0m
+  [4;36;1mSQL (0.000209)[0m   [0;1mINSERT INTO categories ("name", "url") VALUES('3', NULL)[0m
+  [4;35;1mTeam Load (0.000123)[0m   [0mSELECT * FROM teams WHERE (teams."name" = 'Webcor/Alto Velo') LIMIT 1[0m
+  [4;36;1mSQL (0.000395)[0m   [0;1mINSERT INTO teams ("name", "url") VALUES('Webcor/Alto Velo', NULL)[0m
+  [4;35;1mSQL (0.000251)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Bo Habenstreit', NULL, 4, NULL, 379, NULL, 'Male', 6, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000161)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '383') LIMIT 1[0m
+  [4;35;1mTeam Load (0.000105)[0m   [0mSELECT * FROM teams WHERE (teams."name" = 'Independent') LIMIT 1[0m
+  [4;36;1mSQL (0.000204)[0m   [0;1mINSERT INTO teams ("name", "url") VALUES('Independent', NULL)[0m
+  [4;35;1mSQL (0.000221)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Mark Hlade', NULL, 5, NULL, 383, NULL, 'Male', NULL, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000142)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '387') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000220)[0m   [0mSELECT * FROM categories WHERE (categories."name" = '60+') LIMIT 1[0m
+  [4;36;1mSQL (0.000299)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Joseph Maurer', NULL, NULL, NULL, 387, NULL, 'Male', 3, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000151)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '391') LIMIT 1[0m
+  [4;36;1mCategory Load (0.000211)[0m   [0;1mSELECT * FROM categories WHERE (categories."name" = '4') LIMIT 1[0m
+  [4;35;1mTeam Load (0.000196)[0m   [0mSELECT * FROM teams WHERE (teams."name" = 'Webcor/Alto Velo') LIMIT 1[0m
+  [4;36;1mSQL (0.000236)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Billy Crane', NULL, 4, NULL, 391, NULL, 'Male', 1, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000140)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '395') LIMIT 1[0m
+  [4;36;1mCategory Load (0.000108)[0m   [0;1mSELECT * FROM categories WHERE (categories."name" = '5') LIMIT 1[0m
+  [4;35;1mSQL (0.000207)[0m   [0mINSERT INTO categories ("name", "url") VALUES('5', NULL)[0m
+  [4;36;1mSQL (0.000222)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Robert Orontt', NULL, NULL, NULL, 395, NULL, 'Male', 7, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000147)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '385') LIMIT 1[0m
+  [4;36;1mTeam Load (0.000206)[0m   [0;1mSELECT * FROM teams WHERE (teams."name" = 'SJBC') LIMIT 1[0m
+  [4;35;1mSQL (0.000234)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Todd Studenicke', NULL, 1, NULL, 385, NULL, 'Male', NULL, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000152)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '389') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000113)[0m   [0mSELECT * FROM categories WHERE (categories."name" = '45+') LIMIT 1[0m
+  [4;36;1mSQL (0.000211)[0m   [0;1mINSERT INTO categories ("name", "url") VALUES('45+', NULL)[0m
+  [4;35;1mTeam Load (0.000119)[0m   [0mSELECT * FROM teams WHERE (teams."name" = 'Republic of Anaerobia') LIMIT 1[0m
+  [4;36;1mSQL (0.000201)[0m   [0;1mINSERT INTO teams ("name", "url") VALUES('Republic of Anaerobia', NULL)[0m
+  [4;35;1mSQL (0.000240)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Larry Munoz', NULL, 6, NULL, 389, NULL, 'Male', 8, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000161)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '393') LIMIT 1[0m
+  [4;35;1mSQL (0.000255)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Mike Guitterrez', NULL, NULL, NULL, 393, NULL, 'Male', NULL, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000146)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '399') LIMIT 1[0m
+  [4;35;1mSQL (0.000219)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Eric Powell', NULL, NULL, NULL, 399, NULL, 'Male', NULL, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000144)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '405') LIMIT 1[0m
+  [4;35;1mSQL (0.000234)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Aaron Thomas', NULL, NULL, NULL, 405, NULL, 'Male', NULL, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000147)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '304') LIMIT 1[0m
+  [4;35;1mTeam Load (0.000106)[0m   [0mSELECT * FROM teams WHERE (teams."name" = 'Superius Team') LIMIT 1[0m
+  [4;36;1mSQL (0.000205)[0m   [0;1mINSERT INTO teams ("name", "url") VALUES('Superius Team', NULL)[0m
+  [4;35;1mSQL (0.000214)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Jose Aquirro', NULL, 7, NULL, 304, NULL, 'Male', NULL, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000138)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '334') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000105)[0m   [0mSELECT * FROM categories WHERE (categories."name" = 'Masters') LIMIT 1[0m
+  [4;36;1mSQL (0.000192)[0m   [0;1mINSERT INTO categories ("name", "url") VALUES('Masters', NULL)[0m
+  [4;35;1mTeam Load (0.000117)[0m   [0mSELECT * FROM teams WHERE (teams."name" = 'Catellus') LIMIT 1[0m
+  [4;36;1mSQL (0.000188)[0m   [0;1mINSERT INTO teams ("name", "url") VALUES('Catellus', NULL)[0m
+  [4;35;1mSQL (0.000234)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Greg Moore', NULL, 8, NULL, 334, NULL, 'Male', 9, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000144)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '346') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000216)[0m   [0mSELECT * FROM categories WHERE (categories."name" = '45+') LIMIT 1[0m
+  [4;36;1mTeam Load (0.000182)[0m   [0;1mSELECT * FROM teams WHERE (teams."name" = 'SJBC') LIMIT 1[0m
+  [4;35;1mSQL (0.000236)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Joe Farinha', NULL, 1, NULL, 346, NULL, 'Male', 8, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000140)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '381') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000103)[0m   [0mSELECT * FROM categories WHERE (categories."name" = 'Junior') LIMIT 1[0m
+  [4;36;1mSQL (0.000196)[0m   [0;1mINSERT INTO categories ("name", "url") VALUES('Junior', NULL)[0m
+  [4;35;1mTeam Load (0.000203)[0m   [0mSELECT * FROM teams WHERE (teams."name" = 'SJBC') LIMIT 1[0m
+  [4;36;1mSQL (0.000214)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('David Farinha', NULL, 1, NULL, 381, NULL, 'Male', 10, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000238)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '409') LIMIT 1[0m
+  [4;36;1mCategory Load (0.000255)[0m   [0;1mSELECT * FROM categories WHERE (categories."name" = '45+') LIMIT 1[0m
+  [4;35;1mTeam Load (0.000200)[0m   [0mSELECT * FROM teams WHERE (teams."name" = 'SJBC') LIMIT 1[0m
+  [4;36;1mSQL (0.000291)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Alan Weatherall', NULL, 1, NULL, 409, NULL, 'Male', 8, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000147)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '353') LIMIT 1[0m
+  [4;36;1mCategory Load (0.000107)[0m   [0;1mSELECT * FROM categories WHERE (categories."name" = 'Dutch') LIMIT 1[0m
+  [4;35;1mSQL (0.000225)[0m   [0mINSERT INTO categories ("name", "url") VALUES('Dutch', NULL)[0m
+  [4;36;1mTeam Load (0.000122)[0m   [0;1mSELECT * FROM teams WHERE (teams."name" = 'GDI') LIMIT 1[0m
+  [4;35;1mSQL (0.000197)[0m   [0mINSERT INTO teams ("name", "url") VALUES('GDI', NULL)[0m
+  [4;36;1mSQL (0.000251)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Hans de Roos', NULL, 9, NULL, 353, NULL, 'Male', 11, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000258)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '357') LIMIT 1[0m
+  [4;36;1mCategory Load (0.000113)[0m   [0;1mSELECT * FROM categories WHERE (categories."name" = '40+') LIMIT 1[0m
+  [4;35;1mSQL (0.000264)[0m   [0mINSERT INTO categories ("name", "url") VALUES('40+', NULL)[0m
+  [4;36;1mTeam Load (0.000123)[0m   [0;1mSELECT * FROM teams WHERE (teams."name" = ' Velo Girls') LIMIT 1[0m
+  [4;35;1mSQL (0.000201)[0m   [0mINSERT INTO teams ("name", "url") VALUES(' Velo Girls', NULL)[0m
+  [4;36;1mSQL (0.000232)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Lorri Lee Lown', NULL, 10, NULL, 357, NULL, 'Female', 12, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000163)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '361') LIMIT 1[0m
+  [4;36;1mCategory Load (0.000119)[0m   [0;1mSELECT * FROM categories WHERE (categories."name" = 'Slow') LIMIT 1[0m
+  [4;35;1mSQL (0.000275)[0m   [0mINSERT INTO categories ("name", "url") VALUES('Slow', NULL)[0m
+  [4;36;1mTeam Load (0.000125)[0m   [0;1mSELECT * FROM teams WHERE (teams."name" = 'Velo Girls') LIMIT 1[0m
+  [4;35;1mSQL (0.000197)[0m   [0mINSERT INTO teams ("name", "url") VALUES('Velo Girls', NULL)[0m
+  [4;36;1mSQL (0.000299)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Dana Freedman', NULL, 11, NULL, 361, NULL, 'Female', 13, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000194)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '365') LIMIT 1[0m
+  [4;36;1mCategory Load (0.000115)[0m   [0;1mSELECT * FROM categories WHERE (categories."name" = 'Sick') LIMIT 1[0m
+  [4;35;1mSQL (0.000236)[0m   [0mINSERT INTO categories ("name", "url") VALUES('Sick', NULL)[0m
+  [4;36;1mTeam Load (0.000126)[0m   [0;1mSELECT * FROM teams WHERE (teams."name" = 'Chain Reaction') LIMIT 1[0m
+  [4;35;1mSQL (0.000219)[0m   [0mINSERT INTO teams ("name", "url") VALUES('Chain Reaction', NULL)[0m
+  [4;36;1mSQL (0.000306)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Gino Cetani', NULL, 12, NULL, 365, NULL, 'Male', 14, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000172)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '369') LIMIT 1[0m
+  [4;36;1mCategory Load (0.000233)[0m   [0;1mSELECT * FROM categories WHERE (categories."name" = '40+') LIMIT 1[0m
+  [4;35;1mTeam Load (0.000109)[0m   [0mSELECT * FROM teams WHERE (teams."name" = 'PMVC') LIMIT 1[0m
+  [4;36;1mSQL (0.000214)[0m   [0;1mINSERT INTO teams ("name", "url") VALUES('PMVC', NULL)[0m
+  [4;35;1mSQL (0.000226)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Ernest Schimmerling', NULL, 13, NULL, 369, NULL, 'Male', 12, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000149)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '373') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000114)[0m   [0mSELECT * FROM categories WHERE (categories."name" = 'Dirt Woman') LIMIT 1[0m
+  [4;36;1mSQL (0.000216)[0m   [0;1mINSERT INTO categories ("name", "url") VALUES('Dirt Woman', NULL)[0m
+  [4;35;1mTeam Load (0.000124)[0m   [0mSELECT * FROM teams WHERE (teams."name" = 'Bicycle Trip') LIMIT 1[0m
+  [4;36;1mSQL (0.000194)[0m   [0;1mINSERT INTO teams ("name", "url") VALUES('Bicycle Trip', NULL)[0m
+  [4;35;1mSQL (0.000226)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Melanie Dominguez', NULL, 14, NULL, 373, NULL, 'Female', 15, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000149)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '377') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000210)[0m   [0mSELECT * FROM categories WHERE (categories."name" = '45+') LIMIT 1[0m
+  [4;36;1mTeam Load (0.000202)[0m   [0;1mSELECT * FROM teams WHERE (teams."name" = 'SJBC') LIMIT 1[0m
+  [4;35;1mSQL (0.000251)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Edward Webh', NULL, 1, NULL, 377, NULL, 'Male', 8, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000161)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '401') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000112)[0m   [0mSELECT * FROM categories WHERE (categories."name" = '35+') LIMIT 1[0m
+  [4;36;1mSQL (0.000215)[0m   [0;1mINSERT INTO categories ("name", "url") VALUES('35+', NULL)[0m
+  [4;35;1mSQL (0.000271)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('David Hanel', NULL, NULL, NULL, 401, NULL, 'Male', 16, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000179)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '406') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000238)[0m   [0mSELECT * FROM categories WHERE (categories."name" = 'Junior') LIMIT 1[0m
+  [4;36;1mTeam Load (0.000191)[0m   [0;1mSELECT * FROM teams WHERE (teams."name" = 'SJBC') LIMIT 1[0m
+  [4;35;1mSQL (0.000270)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Gento Kusano', NULL, 1, NULL, 406, NULL, 'Male', 10, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000151)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '410') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000203)[0m   [0mSELECT * FROM categories WHERE (categories."name" = '35+') LIMIT 1[0m
+  [4;36;1mSQL (0.000272)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Yuval Rachmilevitz', NULL, NULL, NULL, 410, NULL, 'Male', 16, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000153)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '413') LIMIT 1[0m
+  [4;36;1mCategory Load (0.000210)[0m   [0;1mSELECT * FROM categories WHERE (categories."name" = '45+') LIMIT 1[0m
+  [4;35;1mSQL (0.000244)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('David Quincy', NULL, NULL, NULL, 413, NULL, 'Male', 8, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000160)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '416') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000122)[0m   [0mSELECT * FROM categories WHERE (categories."name" = 'Super Mid-Life Crisis') LIMIT 1[0m
+  [4;36;1mSQL (0.000203)[0m   [0;1mINSERT INTO categories ("name", "url") VALUES('Super Mid-Life Crisis', NULL)[0m
+  [4;35;1mSQL (0.000223)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('David Womer', NULL, NULL, NULL, 416, NULL, 'Male', 17, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000175)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '419') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000214)[0m   [0mSELECT * FROM categories WHERE (categories."name" = '40+') LIMIT 1[0m
+  [4;36;1mTeam Load (0.000189)[0m   [0;1mSELECT * FROM teams WHERE (teams."name" = 'Webcor/Alto Velo') LIMIT 1[0m
+  [4;35;1mSQL (0.000254)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Akin Dirik', NULL, 4, NULL, 419, NULL, 'Male', 12, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000146)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '422') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000196)[0m   [0mSELECT * FROM categories WHERE (categories."name" = '4') LIMIT 1[0m
+  [4;36;1mTeam Load (0.000109)[0m   [0;1mSELECT * FROM teams WHERE (teams."name" = 'Western Wheelers') LIMIT 1[0m
+  [4;35;1mSQL (0.000206)[0m   [0mINSERT INTO teams ("name", "url") VALUES('Western Wheelers', NULL)[0m
+  [4;36;1mSQL (0.000214)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Connie Jaremczuk', NULL, 15, NULL, 422, NULL, 'Female', 1, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000251)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '425') LIMIT 1[0m
+  [4;36;1mCategory Load (0.000259)[0m   [0;1mSELECT * FROM categories WHERE (categories."name" = '4') LIMIT 1[0m
+  [4;35;1mSQL (0.000266)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Tully Cashman', NULL, NULL, NULL, 425, NULL, 'Male', 1, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000161)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '428') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000226)[0m   [0mSELECT * FROM categories WHERE (categories."name" = '45+') LIMIT 1[0m
+  [4;36;1mSQL (0.000227)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Jan Berka', NULL, NULL, NULL, 428, NULL, 'Male', 8, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000145)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '431') LIMIT 1[0m
+  [4;36;1mCategory Load (0.000190)[0m   [0;1mSELECT * FROM categories WHERE (categories."name" = '40+') LIMIT 1[0m
+  [4;35;1mTeam Load (0.000107)[0m   [0mSELECT * FROM teams WHERE (teams."name" = 'Equipe Mod Classique') LIMIT 1[0m
+  [4;36;1mSQL (0.000319)[0m   [0;1mINSERT INTO teams ("name", "url") VALUES('Equipe Mod Classique', NULL)[0m
+  [4;35;1mSQL (0.000229)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Charles Pockell-Wilson', NULL, 16, NULL, 431, NULL, 'Male', 12, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000160)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '434') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000226)[0m   [0mSELECT * FROM categories WHERE (categories."name" = '45+') LIMIT 1[0m
+  [4;36;1mTeam Load (0.000193)[0m   [0;1mSELECT * FROM teams WHERE (teams."name" = 'Western Wheelers') LIMIT 1[0m
+  [4;35;1mSQL (0.000239)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Mike Reed', NULL, 15, NULL, 434, NULL, 'Male', 8, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000155)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '437') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000108)[0m   [0mSELECT * FROM categories WHERE (categories."name" = '37') LIMIT 1[0m
+  [4;36;1mSQL (0.000332)[0m   [0;1mINSERT INTO categories ("name", "url") VALUES('37', NULL)[0m
+  [4;35;1mTeam Load (0.000180)[0m   [0mSELECT * FROM teams WHERE (teams."name" = 'Trappist') LIMIT 1[0m
+  [4;36;1mSQL (0.000242)[0m   [0;1mINSERT INTO teams ("name", "url") VALUES('Trappist', NULL)[0m
+  [4;35;1mSQL (0.000277)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Carlos Perez', NULL, 17, NULL, 437, NULL, 'Male', 18, NULL, NULL, NULL)[0m
+  [4;36;1mRider Load (0.000220)[0m   [0;1mSELECT * FROM riders WHERE (riders."lkhc_number" = '440') LIMIT 1[0m
+  [4;35;1mCategory Load (0.000258)[0m   [0mSELECT * FROM categories WHERE (categories."name" = '40+') LIMIT 1[0m
+  [4;36;1mSQL (0.000266)[0m   [0;1mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Kris Cowherd', NULL, NULL, NULL, 440, NULL, 'Female', 12, NULL, NULL, NULL)[0m
+  [4;35;1mRider Load (0.000162)[0m   [0mSELECT * FROM riders WHERE (riders."lkhc_number" = '443') LIMIT 1[0m
+  [4;36;1mCategory Load (0.000205)[0m   [0;1mSELECT * FROM categories WHERE (categories."name" = '40+') LIMIT 1[0m
+  [4;35;1mSQL (0.000239)[0m   [0mINSERT INTO riders ("name", "photo", "team_id", "weight", "lkhc_number", "url", "gender", "category_id", "age", "password", "email") VALUES('Miles Cowherd', NULL, NULL, NULL, 443, NULL, 'Male', 12, NULL, NULL, NULL)[0m
+
+
+Processing RiderController#index (for 127.0.0.1 at 2007-11-25 21:46:45) [GET]
+  Session ID: 87766edcda33f6da80361e98ba62f521
+  Parameters: {"action"=>"index", "controller"=>"rider"}
+  [4;36;1mSQL (0.000234)[0m   [0;1mSELECT count(*) AS count_all FROM riders [0m
+  [4;35;1mRider Load (0.001520)[0m   [0mSELECT * FROM riders LIMIT 10 OFFSET 0[0m
+Rendering layoutfalseactionlist within layouts/application
+Rendering rider/list
+Completed in 0.02727 (36 reqs/sec) | Rendering: 0.01482 (54%) | DB: 0.00175 (6%) | 200 OK [http://localhost/rider]
+
+
+Processing RiderController#index (for 127.0.0.1 at 2007-11-25 21:46:50) [GET]
+  Session ID: 87766edcda33f6da80361e98ba62f521
+  Parameters: {"action"=>"index", "controller"=>"rider", "page"=>"2"}
+  [4;36;1mSQL (0.000173)[0m   [0;1mSELECT count(*) AS count_all FROM riders [0m
+  [4;35;1mRider Load (0.001346)[0m   [0mSELECT * FROM riders LIMIT 10 OFFSET 10[0m
+Rendering layoutfalseactionlist within layouts/application
+Rendering rider/list
+Completed in 0.01799 (55 reqs/sec) | Rendering: 0.00689 (38%) | DB: 0.00152 (8%) | 200 OK [http://localhost/rider?page=2]
+
+
+Processing RiderController#index (for 127.0.0.1 at 2007-11-25 21:46:52) [GET]
+  Session ID: 87766edcda33f6da80361e98ba62f521
+  Parameters: {"action"=>"index", "controller"=>"rider", "page"=>"3"}
+  [4;36;1mSQL (0.000185)[0m   [0;1mSELECT count(*) AS count_all FROM riders [0m
+  [4;35;1mRider Load (0.001351)[0m   [0mSELECT * FROM riders LIMIT 10 OFFSET 20[0m
+Rendering layoutfalseactionlist within layouts/application
+Rendering rider/list
+Completed in 0.01791 (55 reqs/sec) | Rendering: 0.00678 (37%) | DB: 0.00154 (8%) | 200 OK [http://localhost/rider?page=3]
+
+
+Processing RiderController#index (for 127.0.0.1 at 2007-11-25 21:46:53) [GET]
+  Session ID: 87766edcda33f6da80361e98ba62f521
+  Parameters: {"action"=>"index", "controller"=>"rider", "page"=>"4"}
+  [4;36;1mSQL (0.000174)[0m   [0;1mSELECT count(*) AS count_all FROM riders [0m
+  [4;35;1mRider Load (0.001315)[0m   [0mSELECT * FROM riders LIMIT 10 OFFSET 30[0m
+Rendering layoutfalseactionlist within layouts/application
+Rendering rider/list
+Completed in 0.01778 (56 reqs/sec) | Rendering: 0.00697 (39%) | DB: 0.00149 (8%) | 200 OK [http://localhost/rider?page=4]
+
+
+Processing RiderController#index (for 127.0.0.1 at 2007-11-25 22:11:33) [GET]
+  Session ID: 87766edcda33f6da80361e98ba62f521
+  Parameters: {"action"=>"index", "controller"=>"rider", "page"=>"4"}
+  [4;36;1mSQL (0.000181)[0m   [0;1mSELECT count(*) AS count_all FROM riders [0m
+  [4;35;1mRider Load (0.001404)[0m   [0mSELECT * FROM riders LIMIT 10 OFFSET 30[0m
+Rendering layoutfalseactionlist within layouts/application
+Rendering rider/list
+  [4;36;1mCategory Load (0.000238)[0m   [0;1mSELECT * FROM categories WHERE (categories."id" = 15) [0m
+  [4;35;1mTeam Load (0.000214)[0m   [0mSELECT * FROM teams WHERE (teams."id" = 14) [0m
+  [4;36;1mCategory Load (0.000207)[0m   [0;1mSELECT * FROM categories WHERE (categories."id" = 8) [0m
+  [4;35;1mTeam Load (0.000181)[0m   [0mSELECT * FROM teams WHERE (teams."id" = 1) [0m
+  [4;36;1mCategory Load (0.000184)[0m   [0;1mSELECT * FROM categories WHERE (categories."id" = 16) [0m
+  [4;35;1mCategory Load (0.000204)[0m   [0mSELECT * FROM categories WHERE (categories."id" = 10) [0m
+  [4;36;1mTeam Load (0.000190)[0m   [0;1mSELECT * FROM teams WHERE (teams."id" = 1) [0m
+  [4;35;1mCategory Load (0.000187)[0m   [0mSELECT * FROM categories WHERE (categories."id" = 16) [0m
+  [4;36;1mCategory Load (0.000186)[0m   [0;1mSELECT * FROM categories WHERE (categories."id" = 8) [0m
+  [4;35;1mCategory Load (0.000187)[0m   [0mSELECT * FROM categories WHERE (categories."id" = 17) [0m
+  [4;36;1mCategory Load (0.000185)[0m   [0;1mSELECT * FROM categories WHERE (categories."id" = 12) [0m
+  [4;35;1mTeam Load (0.000179)[0m   [0mSELECT * FROM teams WHERE (teams."id" = 4) [0m
+  [4;36;1mCategory Load (0.000182)[0m   [0;1mSELECT * FROM categories WHERE (categories."id" = 1) [0m
+  [4;35;1mTeam Load (0.000181)[0m   [0mSELECT * FROM teams WHERE (teams."id" = 15) [0m
+  [4;36;1mCategory Load (0.000186)[0m   [0;1mSELECT * FROM categories WHERE (categories."id" = 1) [0m
+Completed in 0.03596 (27 reqs/sec) | Rendering: 0.02141 (59%) | DB: 0.00448 (12%) | 200 OK [http://localhost/rider?page=4]
+
+
+Processing RiderController#index (for 127.0.0.1 at 2007-11-25 22:11:43) [GET]
+  Session ID: 87766edcda33f6da80361e98ba62f521
+  Parameters: {"action"=>"index", "controller"=>"rider", "page"=>"4"}
+  [4;35;1mSQL (0.000187)[0m   [0mSELECT count(*) AS count_all FROM riders [0m
+  [4;36;1mRider Load (0.001353)[0m   [0;1mSELECT * FROM riders LIMIT 10 OFFSET 30[0m
+Rendering layoutfalseactionlist within layouts/application
+Rendering rider/list
+  [4;35;1mCategory Load (0.000232)[0m   [0mSELECT * FROM categories WHERE (categories."id" = 15) [0m
+  [4;36;1mTeam Load (0.000211)[0m   [0;1mSELECT * FROM teams WHERE (teams."id" = 14) [0m
+  [4;35;1mCategory Load (0.000198)[0m   [0mSELECT * FROM categories WHERE (categories."id" = 8) [0m
+  [4;36;1mTeam Load (0.000176)[0m   [0;1mSELECT * FROM teams WHERE (teams."id" = 1) [0m
+  [4;35;1mCategory Load (0.000179)[0m   [0mSELECT * FROM categories WHERE (categories."id" = 16) [0m
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.name) on line #18 of app/views/rider/list.rhtml:
+15:     <td><%=h rider.send(column.name) %></td>
+16:   <% end %>
+17: 	<td><%=h rider.category.name %></td>
+18: 	<td><%=h rider.team.name %></td>
+19:     <td><%= link_to 'Show', :action => 'show', :id => rider %></td>
+20:     <td><%= link_to 'Edit', :action => 'edit', :id => rider %></td>
+21:     <td><%= link_to 'Destroy', { :action => 'destroy', :id => rider }, :confirm => 'Are you sure?', :method => :post %></td>
+
+    #{RAILS_ROOT}/app/views/rider/list.rhtml:18:in `_run_rhtml_47app47views47rider47list46rhtml'
+    #{RAILS_ROOT}/app/views/rider/list.rhtml:12:in `each'
+    #{RAILS_ROOT}/app/views/rider/list.rhtml:12:in `_run_rhtml_47app47views47rider47list46rhtml'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `send'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:326:in `compile_and_render_template'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:301:in `render_template'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_view/base.rb:260:in `render_file'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:806:in `render_file'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:738:in `render_with_no_layout'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:863:in `render_without_layout'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:798:in `render_action'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:748:in `render_with_no_layout'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/deprecation.rb:44:in `silence'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:747:in `render_with_no_layout'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/layout.rb:244:in `render_without_benchmark'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:50:in `render'
+    app/controllers/rider_controller.rb:4:in `index'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `send'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:330:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:41:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+
+Rendering /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing RiderController#index (for 127.0.0.1 at 2007-11-25 22:14:59) [GET]
+  Session ID: 87766edcda33f6da80361e98ba62f521
+  Parameters: {"action"=>"index", "controller"=>"rider", "page"=>"4"}
+  [4;36;1mSQL (0.000175)[0m   [0;1mSELECT count(*) AS count_all FROM riders [0m
+  [4;35;1mRider Load (0.001306)[0m   [0mSELECT * FROM riders LIMIT 10 OFFSET 30[0m
+Rendering layoutfalseactionlist within layouts/application
+Rendering rider/list
+  [4;36;1mCategory Load (0.000221)[0m   [0;1mSELECT * FROM categories WHERE (categories."id" = 15) [0m
+  [4;35;1mTeam Load (0.000210)[0m   [0mSELECT * FROM teams WHERE (teams."id" = 14) [0m
+  [4;36;1mCategory Load (0.000212)[0m   [0;1mSELECT * FROM categories WHERE (categories."id" = 8) [0m
+  [4;35;1mTeam Load (0.000180)[0m   [0mSELECT * FROM teams WHERE (teams."id" = 1) [0m
+  [4;36;1mCategory Load (0.000179)[0m   [0;1mSELECT * FROM categories WHERE (categories."id" = 16) [0m
+  [4;35;1mCategory Load (0.000195)[0m   [0mSELECT * FROM categories WHERE (categories."id" = 10) [0m
+  [4;36;1mTeam Load (0.000175)[0m   [0;1mSELECT * FROM teams WHERE (teams."id" = 1) [0m
+  [4;35;1mCategory Load (0.000176)[0m   [0mSELECT * FROM categories WHERE (categories."id" = 16) [0m
+  [4;36;1mCategory Load (0.000180)[0m   [0;1mSELECT * FROM categories WHERE (categories."id" = 8) [0m
+  [4;35;1mCategory Load (0.000177)[0m   [0mSELECT * FROM categories WHERE (categories."id" = 17) [0m
+  [4;36;1mCategory Load (0.000179)[0m   [0;1mSELECT * FROM categories WHERE (categories."id" = 12) [0m
+  [4;35;1mTeam Load (0.000172)[0m   [0mSELECT * FROM teams WHERE (teams."id" = 4) [0m
+  [4;36;1mCategory Load (0.000179)[0m   [0;1mSELECT * FROM categories WHERE (categories."id" = 1) [0m
+  [4;35;1mTeam Load (0.000173)[0m   [0mSELECT * FROM teams WHERE (teams."id" = 15) [0m
+  [4;36;1mCategory Load (0.000177)[0m   [0;1mSELECT * FROM categories WHERE (categories."id" = 1) [0m
+Completed in 0.03398 (29 reqs/sec) | Rendering: 0.02028 (59%) | DB: 0.00427 (12%) | 200 OK [http://localhost/rider?page=4]
+  [4;36;1mCategory Load (0.000781)[0m   [0;1mSELECT * FROM categories LIMIT 1[0m
+  [4;35;1mCategory Load (0.000333)[0m   [0mSELECT * FROM categories LIMIT 1[0m
+  [4;36;1mRider Load (0.000835)[0m   [0;1mSELECT * FROM riders WHERE (riders.category_id = 1) [0m
+  [4;35;1mCategory Load (0.000357)[0m   [0mSELECT * FROM categories WHERE (categories."name" = '5') LIMIT 1[0m
+  [4;36;1mRider Load (0.000311)[0m   [0;1mSELECT * FROM riders WHERE (riders.category_id = 7) [0m
+  [4;35;1mCategory Load (0.000328)[0m   [0mSELECT * FROM categories LIMIT 1[0m
+  [4;36;1mRider Load (0.000768)[0m   [0;1mSELECT * FROM riders WHERE (riders.category_id = 1) [0m
+  [4;35;1mCategory Load (0.000331)[0m   [0mSELECT * FROM categories LIMIT 1[0m
+  [4;36;1mRider Load (0.000757)[0m   [0;1mSELECT * FROM riders WHERE (riders.category_id = 1) [0m
