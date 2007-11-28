@@ -6,7 +6,7 @@ class CreateSeriesEvents < ActiveRecord::Migration
       t.column :scheduled_date, :date
       t.column :registration_start, :datetime
       t.column :registration_end, :datetime
-      t.column :event_start, :date
+      t.column :event_start, :datetime
       t.column :cost, :float
       t.column :blurb, :text
       t.column :coordinator, :string
