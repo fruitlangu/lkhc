@@ -1,0 +1,51 @@
+class SeriesEventController < ApplicationController
+  def index
+    list
+    render :action => 'list'
+  end
+
+  # GETs should be safe (see http://www.w3.org/2001/tag/doc/whenToUseGet.html)
+  verify :method => :post, :only => [ :destroy, :create, :update ],
+         :redirect_to => { :action => :list }
+
+  def list
+    @series_event_pages, @series_events = paginate :series_events, :per_page => 10
+  end
+
+  def show
+    @series_event = SeriesEvent.find(params[:id])
+  end
+
+  def new
+    @series_event = SeriesEvent.new
+  end
+
+  def create
+    @series_event = SeriesEvent.new(params[:series_event])
+    if @series_event.save
+      flash[:notice] = 'SeriesEvent was successfully created.'
+      redirect_to :action => 'list'
+    else
+      render :action => 'new'
+    end
+  end
+
+  def edit
+    @series_event = SeriesEvent.find(params[:id])
+  end
+
+  def update
+    @series_event = SeriesEvent.find(params[:id])
+    if @series_event.update_attributes(params[:series_event])
+      flash[:notice] = 'SeriesEvent was successfully updated.'
+      redirect_to :action => 'show', :id => @series_event
+    else
+      render :action => 'edit'
+    end
+  end
+
+  def destroy
+    SeriesEvent.find(params[:id]).destroy
+    redirect_to :action => 'list'
+  end
+end

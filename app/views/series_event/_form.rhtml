@@ -1,0 +1,31 @@
+<%= error_messages_for 'series_event' %>
+
+<!--[form:series_event]-->
+<p><label for="series_event_scheduled_date">Scheduled date</label><br/>
+<%= date_select 'series_event', 'scheduled_date'  %></p>
+
+<p><label for="series_event_registration_start">Registration start</label><br/>
+<%= datetime_select 'series_event', 'registration_start'  %></p>
+
+<p><label for="series_event_registration_end">Registration end</label><br/>
+<%= datetime_select 'series_event', 'registration_end'  %></p>
+
+<p><label for="series_event_event_start">Event start</label><br/>
+<%= datetime_select 'series_event', 'event_start'  %></p>
+
+<p><label for="series_event_cost">Cost</label><br/>
+<%= text_field 'series_event', 'cost'  %></p>
+
+<p><label for="series_event_blurb">Blurb</label><br/>
+<%= text_area 'series_event', 'blurb'  %></p>
+
+<p><label for="series_event_coordinator">Coordinator</label><br/>
+<%= text_field 'series_event', 'coordinator'  %></p>
+
+<p><label for="series_event_staging_area_url">Staging area url</label><br/>
+<%= text_field 'series_event', 'staging_area_url'  %></p>
+
+<p><label for="series_event_week_number">Week number</label><br/>
+<%= text_field 'series_event', 'week_number'  %></p>
+<!--[eoform:series_event]-->
+

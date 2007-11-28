@@ -799,3 +799,554 @@ Completed in 0.03398 (29 reqs/sec) | Rendering: 0.02028 (59%) | DB: 0.00427 (12%
   [4;36;1mRider Load (0.000768)[0m   [0;1mSELECT * FROM riders WHERE (riders.category_id = 1) [0m
   [4;35;1mCategory Load (0.000331)[0m   [0mSELECT * FROM categories LIMIT 1[0m
   [4;36;1mRider Load (0.000757)[0m   [0;1mSELECT * FROM riders WHERE (riders.category_id = 1) [0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2007-11-27 15:54:15) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/" with {:method=>:get}):
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing RiderController#index (for 127.0.0.1 at 2007-11-27 15:54:18) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {"action"=>"index", "controller"=>"rider"}
+  [4;36;1mSQL (0.000289)[0m   [0;1mSELECT count(*) AS count_all FROM riders [0m
+  [4;35;1mRider Load (0.001982)[0m   [0mSELECT * FROM riders LIMIT 10 OFFSET 0[0m
+Rendering layoutfalseactionlist within layouts/application
+Rendering rider/list
+  [4;36;1mCategory Load (0.000252)[0m   [0;1mSELECT * FROM categories WHERE (categories."id" = 1) [0m
+  [4;35;1mTeam Load (0.000235)[0m   [0mSELECT * FROM teams WHERE (teams."id" = 1) [0m
+  [4;36;1mCategory Load (0.000255)[0m   [0;1mSELECT * FROM categories WHERE (categories."id" = 3) [0m
+  [4;35;1mCategory Load (0.000224)[0m   [0mSELECT * FROM categories WHERE (categories."id" = 4) [0m
+  [4;36;1mTeam Load (0.000220)[0m   [0;1mSELECT * FROM teams WHERE (teams."id" = 1) [0m
+  [4;35;1mTeam Load (0.000242)[0m   [0mSELECT * FROM teams WHERE (teams."id" = 2) [0m
+  [4;36;1mCategory Load (0.000209)[0m   [0;1mSELECT * FROM categories WHERE (categories."id" = 5) [0m
+  [4;35;1mTeam Load (0.000204)[0m   [0mSELECT * FROM teams WHERE (teams."id" = 1) [0m
+  [4;36;1mCategory Load (0.000212)[0m   [0;1mSELECT * FROM categories WHERE (categories."id" = 1) [0m
+  [4;35;1mTeam Load (0.000204)[0m   [0mSELECT * FROM teams WHERE (teams."id" = 3) [0m
+Completed in 0.14677 (6 reqs/sec) | Rendering: 0.02485 (16%) | DB: 0.00453 (3%) | 200 OK [http://localhost/rider]
+
+
+Processing ClimbController#index (for 127.0.0.1 at 2007-11-27 15:55:06) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {"action"=>"index", "controller"=>"climb"}
+  [4;36;1mSQL (0.000196)[0m   [0;1mSELECT count(*) AS count_all FROM climbs [0m
+  [4;35;1mClimb Load (0.000129)[0m   [0mSELECT * FROM climbs LIMIT 10 OFFSET 0[0m
+Rendering layoutfalseactionlist within layouts/application
+Rendering climb/list
+Completed in 0.01363 (73 reqs/sec) | Rendering: 0.00324 (23%) | DB: 0.00032 (2%) | 200 OK [http://localhost/climb]
+
+
+Processing ClimbController#new (for 127.0.0.1 at 2007-11-27 15:55:08) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {"action"=>"new", "controller"=>"climb"}
+Rendering  within layouts/application
+Rendering climb/new
+Rendered climb/_form (0.00387)
+Completed in 0.24678 (4 reqs/sec) | Rendering: 0.23414 (94%) | DB: 0.00000 (0%) | 200 OK [http://localhost/climb/new]
+
+
+Processing ClimbController#create (for 127.0.0.1 at 2007-11-27 15:56:07) [POST]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {"commit"=>"Create", "action"=>"create", "controller"=>"climb", "climb"=>{"average_gradient"=>"6", "max_gradient"=>"15", "total_climbing"=>"1371", "title"=>"Mt Hamilton", "max_altitude"=>"1371", "blurb"=>"Mt Hamilton yay, this is a blurb about Mt Hamilton", "location"=>"San Jose", "distance"=>"19.1"}}
+  [4;36;1mSQL (0.000619)[0m   [0;1mINSERT INTO climbs ("average_gradient", "max_gradient", "total_climbing", "title", "max_altitude", "blurb", "distance", "location") VALUES(6, 15, 1371, 'Mt Hamilton', 1371, 'Mt Hamilton yay, this is a blurb about Mt Hamilton', 19, 'San Jose')[0m
+Redirected to http://localhost:3000/climb/list
+Completed in 0.02648 (37 reqs/sec) | DB: 0.00062 (2%) | 302 Found [http://localhost/climb/create]
+
+
+Processing ClimbController#list (for 127.0.0.1 at 2007-11-27 15:56:08) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {"action"=>"list", "controller"=>"climb"}
+  [4;35;1mSQL (0.000185)[0m   [0mSELECT count(*) AS count_all FROM climbs [0m
+  [4;36;1mClimb Load (0.000295)[0m   [0;1mSELECT * FROM climbs LIMIT 10 OFFSET 0[0m
+Rendering  within layouts/application
+Rendering climb/list
+Completed in 0.01239 (80 reqs/sec) | Rendering: 0.00285 (23%) | DB: 0.00048 (3%) | 200 OK [http://localhost/climb/list]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2007-11-27 15:56:23) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/series" with {:method=>:get}):
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2007-11-27 15:56:25) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/serie" with {:method=>:get}):
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2007-11-27 15:56:27) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {}
+
+
+ActionController::RoutingError (no route found to match "/series/" with {:method=>:get}):
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing TeamController#index (for 127.0.0.1 at 2007-11-27 15:56:44) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {"action"=>"index", "controller"=>"team"}
+  [4;35;1mSQL (0.000181)[0m   [0mSELECT count(*) AS count_all FROM teams [0m
+  [4;36;1mTeam Load (0.000731)[0m   [0;1mSELECT * FROM teams LIMIT 10 OFFSET 0[0m
+Rendering layoutfalseactionlist within layouts/application
+Rendering team/list
+Completed in 0.01795 (55 reqs/sec) | Rendering: 0.00865 (48%) | DB: 0.00091 (5%) | 200 OK [http://localhost/team]
+
+
+Processing TeamController#show (for 127.0.0.1 at 2007-11-27 15:56:55) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"team"}
+  [4;35;1mTeam Load (0.000215)[0m   [0mSELECT * FROM teams WHERE (teams."id" = 3) [0m
+Rendering  within layouts/application
+Rendering team/show
+Completed in 0.01131 (88 reqs/sec) | Rendering: 0.00291 (25%) | DB: 0.00021 (1%) | 200 OK [http://localhost/team/show/3]
+
+
+Processing SeriesController#index (for 127.0.0.1 at 2007-11-27 15:58:16) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {"action"=>"index", "controller"=>"series"}
+  [4;36;1mSQL (0.000179)[0m   [0;1mSELECT count(*) AS count_all FROM series [0m
+  [4;35;1mSeries Load (0.000112)[0m   [0mSELECT * FROM series LIMIT 10 OFFSET 0[0m
+Rendering layoutfalseactionlist within layouts/series
+Rendering series/list
+Completed in 0.01400 (71 reqs/sec) | Rendering: 0.00555 (39%) | DB: 0.00029 (2%) | 200 OK [http://localhost/series/]
+
+
+Processing SeriesController#new (for 127.0.0.1 at 2007-11-27 15:58:19) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {"action"=>"new", "controller"=>"series"}
+Rendering  within layouts/series
+Rendering series/new
+Rendered series/_form (0.00106)
+Completed in 0.01262 (79 reqs/sec) | Rendering: 0.00444 (35%) | DB: 0.00000 (0%) | 200 OK [http://localhost/series/new]
+
+
+Processing SeriesController#create (for 127.0.0.1 at 2007-11-27 15:58:35) [POST]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {"commit"=>"Create", "action"=>"create", "series"=>{"year"=>"2007", "blurb"=>"After a few enthusiasm-fueled seconds on the lowest slopes, the large pack quickly dispersed, leaving you surrounded by with a core group, some familiar from previous weeks, others new. These are your companions for the climb, your competition. Riders further ahead, others further behind, no longer matter, no longer exist. They are your true competition, but also your allies. They are your stimulus, your stimulus for the shelter of the moment, for looking into yourself as you look outward to them. Surely you cannot keep their pace. Surely you will crack. The temptation floats in the air, whispering in your mind: let them go, slow down, enjoy the view. But you suppress the thoughts, confine the growing discomfort in your legs and instead embrace it, embrace it as part of your being, part of who you are. The distance to the top no longer matters. You are in the now. And you hold the pace.\r\n\r\nReturning again, after the Grand Return of 2006, the 2007 edition of the Low-Key Hillclimbs. You are ready.\r\n\r\nThe philosophy of the Low-Key series is to allow each cyclist, no matter what his or her level, no matter what his or her speed, to establish goals, and meet them. It's all about the hill, the rider, and being at one with the bike. We'll see you there."}, "controller"=>"series"}
+  [4;36;1mSQL (0.000326)[0m   [0;1mINSERT INTO series ("year", "blurb") VALUES(2007, 'After a few enthusiasm-fueled seconds on the lowest slopes, the large pack quickly dispersed, leaving you surrounded by with a core group, some familiar from previous weeks, others new. These are your companions for the climb, your competition. Riders further ahead, others further behind, no longer matter, no longer exist. They are your true competition, but also your allies. They are your stimulus, your stimulus for the shelter of the moment, for looking into yourself as you look outward to them. Surely you cannot keep their pace. Surely you will crack. The temptation floats in the air, whispering in your mind: let them go, slow down, enjoy the view. But you suppress the thoughts, confine the growing discomfort in your legs and instead embrace it, embrace it as part of your being, part of who you are. The distance to the top no longer matters. You are in the now. And you hold the pace.
+
+Returning again, after the Grand Return of 2006, the 2007 edition of the Low-Key Hillclimbs. You are ready.
+
+The philosophy of the Low-Key series is to allow each cyclist, no matter what his or her level, no matter what his or her speed, to establish goals, and meet them. It''s all about the hill, the rider, and being at one with the bike. We''ll see you there.')[0m
+Redirected to http://localhost:3000/series/list
+Completed in 0.02345 (42 reqs/sec) | DB: 0.00033 (1%) | 302 Found [http://localhost/series/create]
+
+
+Processing SeriesController#list (for 127.0.0.1 at 2007-11-27 15:58:35) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {"action"=>"list", "controller"=>"series"}
+  [4;35;1mSQL (0.000185)[0m   [0mSELECT count(*) AS count_all FROM series [0m
+  [4;36;1mSeries Load (0.000220)[0m   [0;1mSELECT * FROM series LIMIT 10 OFFSET 0[0m
+Rendering  within layouts/series
+Rendering series/list
+Completed in 0.01096 (91 reqs/sec) | Rendering: 0.00243 (22%) | DB: 0.00040 (3%) | 200 OK [http://localhost/series/list]
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000301)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000172)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000163)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000163)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000163)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000161)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000163)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000170)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000165)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000162)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to AddWeek (10)
+  [4;36;1mSQL (0.026290)[0m   [0;1mALTER TABLE series_events ADD "week_number" integer[0m
+  [4;35;1mSQL (0.008529)[0m   [0mVACUUM[0m
+  [4;36;1mSQL (0.001713)[0m   [0;1mUPDATE schema_info SET version = 10[0m
+  [4;35;1mSQL (0.000275)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000612)[0m   [0;1mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;35;1mSQL (0.000070)[0m   [0mPRAGMA index_list(categories)[0m
+  [4;36;1mSQL (0.000064)[0m   [0;1mPRAGMA index_list(climbs)[0m
+  [4;35;1mSQL (0.000062)[0m   [0mPRAGMA index_list(riders)[0m
+  [4;36;1mSQL (0.000058)[0m   [0;1mPRAGMA index_list(series)[0m
+  [4;35;1mSQL (0.000062)[0m   [0mPRAGMA index_list(series_event_results)[0m
+  [4;36;1mSQL (0.000059)[0m   [0;1mPRAGMA index_list(series_events)[0m
+  [4;35;1mSQL (0.000058)[0m   [0mPRAGMA index_list(series_volunteers)[0m
+  [4;36;1mSQL (0.000056)[0m   [0;1mPRAGMA index_list(teams)[0m
+  [4;35;1mSQL (0.000059)[0m   [0mPRAGMA index_list(volunteers)[0m
+
+
+Processing SeriesController#list (for 127.0.0.1 at 2007-11-27 16:06:56) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {"action"=>"list", "controller"=>"series"}
+  [4;35;1mSQL (0.000181)[0m   [0mSELECT count(*) AS count_all FROM series [0m
+  [4;36;1mSeries Load (0.000220)[0m   [0;1mSELECT * FROM series LIMIT 10 OFFSET 0[0m
+Rendering  within layouts/application
+Rendering series/list
+  [4;35;1mSeriesEvent Load (0.000206)[0m   [0mSELECT * FROM series_events WHERE (series_events.series_id = 1) [0m
+Completed in 0.01735 (57 reqs/sec) | Rendering: 0.00858 (49%) | DB: 0.00061 (3%) | 200 OK [http://localhost/series/list]
+
+
+Processing SeriesController#list (for 127.0.0.1 at 2007-11-27 16:07:37) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {"action"=>"list", "controller"=>"series"}
+  [4;36;1mSQL (0.000187)[0m   [0;1mSELECT count(*) AS count_all FROM series [0m
+  [4;35;1mSeries Load (0.000265)[0m   [0mSELECT * FROM series LIMIT 10 OFFSET 0[0m
+Rendering  within layouts/application
+Rendering series/list
+  [4;36;1mSeriesEvent Load (0.000221)[0m   [0;1mSELECT * FROM series_events WHERE (series_events.series_id = 1) [0m
+Completed in 0.01923 (52 reqs/sec) | Rendering: 0.00950 (49%) | DB: 0.00067 (3%) | 200 OK [http://localhost/series/list]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2007-11-27 16:07:38) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {"series_id"=>"1"}
+
+
+ActionController::RoutingError (no route found to match "/series_event/new" with {:method=>:get}):
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1292:in `recognize_path'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/routing.rb:1282:in `recognize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/dispatcher.rb:40:in `dispatch'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:488:in `load'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/servers/mongrel.rb:60
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-1.4.2/lib/active_support/dependencies.rb:495:in `require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/commands/server.rb:39
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+
+Rendering /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing SeriesEventController#new (for 127.0.0.1 at 2007-11-27 16:08:12) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {"action"=>"new", "controller"=>"series_event", "series_id"=>"1"}
+Rendering  within layouts/application
+Rendering series_event/new
+Rendered series_event/_form (0.00556)
+Completed in 0.01916 (52 reqs/sec) | Rendering: 0.00882 (46%) | DB: 0.00000 (0%) | 200 OK [http://localhost/series_event/new?series_id=1]
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000252)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000173)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000230)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to AddWeek (10)
+  [4;35;1mSQL (0.000874)[0m   [0mCREATE TEMPORARY TABLE altered_series_events ("id" INTEGER PRIMARY KEY NOT NULL, "series_id" integer DEFAULT NULL, "climb_id" integer DEFAULT NULL, "scheduled_date" date DEFAULT NULL, "registration_start" datetime DEFAULT NULL, "registration_end" datetime DEFAULT NULL, "event_start" date DEFAULT NULL, "cost" float DEFAULT NULL, "blurb" text DEFAULT NULL, "coordinator" varchar(255) DEFAULT NULL, "staging_area_url" varchar(255) DEFAULT NULL, "week_number" integer DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000058)[0m   [0;1mPRAGMA index_list(series_events)[0m
+  [4;35;1mSQL (0.000301)[0m   [0mDROP TABLE series_events[0m
+  [4;36;1mSQL (0.000260)[0m   [0;1mCREATE TABLE series_events ("id" INTEGER PRIMARY KEY NOT NULL, "series_id" integer DEFAULT NULL, "climb_id" integer DEFAULT NULL, "scheduled_date" date DEFAULT NULL, "registration_start" datetime DEFAULT NULL, "registration_end" datetime DEFAULT NULL, "event_start" date DEFAULT NULL, "cost" float DEFAULT NULL, "blurb" text DEFAULT NULL, "coordinator" varchar(255) DEFAULT NULL, "staging_area_url" varchar(255) DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000054)[0m   [0mPRAGMA index_list(altered_series_events)[0m
+  [4;36;1mSQL (0.000113)[0m   [0;1mDROP TABLE altered_series_events[0m
+  [4;35;1mSQL (0.001987)[0m   [0mUPDATE schema_info SET version = 9[0m
+  [4;36;1mSQL (0.000407)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesVolunteers (9)
+  [4;35;1mSQL (0.001969)[0m   [0mDROP TABLE series_volunteers[0m
+  [4;36;1mSQL (0.001877)[0m   [0;1mUPDATE schema_info SET version = 8[0m
+  [4;35;1mSQL (0.000358)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateVolunteers (8)
+  [4;36;1mSQL (0.008389)[0m   [0;1mDROP TABLE volunteers[0m
+  [4;35;1mSQL (0.001810)[0m   [0mUPDATE schema_info SET version = 7[0m
+  [4;36;1mSQL (0.000396)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesEventResults (7)
+  [4;35;1mSQL (0.001869)[0m   [0mDROP TABLE series_event_results[0m
+  [4;36;1mSQL (0.001750)[0m   [0;1mUPDATE schema_info SET version = 6[0m
+  [4;35;1mSQL (0.000383)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateCategories (6)
+  [4;36;1mSQL (0.002019)[0m   [0;1mDROP TABLE categories[0m
+  [4;35;1mSQL (0.002831)[0m   [0mUPDATE schema_info SET version = 5[0m
+  [4;36;1mSQL (0.000581)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateTeams (5)
+  [4;35;1mSQL (0.002992)[0m   [0mDROP TABLE teams[0m
+  [4;36;1mSQL (0.001846)[0m   [0;1mUPDATE schema_info SET version = 4[0m
+  [4;35;1mSQL (0.000375)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateClimbs (4)
+  [4;36;1mSQL (0.001921)[0m   [0;1mDROP TABLE climbs[0m
+  [4;35;1mSQL (0.001648)[0m   [0mUPDATE schema_info SET version = 3[0m
+  [4;36;1mSQL (0.000364)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesEvents (3)
+  [4;35;1mSQL (0.001966)[0m   [0mDROP TABLE series_events[0m
+  [4;36;1mSQL (0.001775)[0m   [0;1mUPDATE schema_info SET version = 2[0m
+  [4;35;1mSQL (0.000351)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateSeries (2)
+  [4;36;1mSQL (0.002211)[0m   [0;1mDROP TABLE series[0m
+  [4;35;1mSQL (0.001757)[0m   [0mUPDATE schema_info SET version = 1[0m
+  [4;36;1mSQL (0.000372)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateRiders (1)
+  [4;35;1mSQL (0.001925)[0m   [0mDROP TABLE riders[0m
+  [4;36;1mSQL (0.001715)[0m   [0;1mUPDATE schema_info SET version = 0[0m
+  [4;35;1mSQL (0.000388)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000309)[0m   [0;1mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000300)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateRiders (1)
+  [4;35;1mSQL (0.013033)[0m   [0mCREATE TABLE riders ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "password" varchar(255) DEFAULT NULL, "photo" varchar(255) DEFAULT NULL, "lkhc_number" integer DEFAULT NULL, "team_id" integer DEFAULT NULL, "category_id" integer DEFAULT NULL, "gender" varchar(255) DEFAULT NULL, "url" varchar(255) DEFAULT NULL, "age" varchar(255) DEFAULT NULL, "weight" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.002190)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000482)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateSeries (2)
+  [4;36;1mSQL (0.002362)[0m   [0;1mCREATE TABLE series ("id" INTEGER PRIMARY KEY NOT NULL, "year" integer DEFAULT NULL, "blurb" text DEFAULT NULL) [0m
+  [4;35;1mSQL (0.002243)[0m   [0mUPDATE schema_info SET version = 2[0m
+  [4;36;1mSQL (0.000476)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesEvents (3)
+  [4;35;1mSQL (0.002009)[0m   [0mCREATE TABLE series_events ("id" INTEGER PRIMARY KEY NOT NULL, "series_id" integer DEFAULT NULL, "climb_id" integer DEFAULT NULL, "scheduled_date" date DEFAULT NULL, "registration_start" datetime DEFAULT NULL, "registration_end" datetime DEFAULT NULL, "event_start" datetime DEFAULT NULL, "cost" float DEFAULT NULL, "blurb" text DEFAULT NULL, "coordinator" varchar(255) DEFAULT NULL, "staging_area_url" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.002032)[0m   [0;1mUPDATE schema_info SET version = 3[0m
+  [4;35;1mSQL (0.000490)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateClimbs (4)
+  [4;36;1mSQL (0.002210)[0m   [0;1mCREATE TABLE climbs ("id" INTEGER PRIMARY KEY NOT NULL, "title" varchar(255) DEFAULT NULL, "location" varchar(255) DEFAULT NULL, "max_altitude" integer DEFAULT NULL, "total_climbing" integer DEFAULT NULL, "average_gradient" integer DEFAULT NULL, "max_gradient" integer DEFAULT NULL, "distance" integer DEFAULT NULL, "blurb" text DEFAULT NULL) [0m
+  [4;35;1mSQL (0.001865)[0m   [0mUPDATE schema_info SET version = 4[0m
+  [4;36;1mSQL (0.000495)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateTeams (5)
+  [4;35;1mSQL (0.002004)[0m   [0mCREATE TABLE teams ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL, "url" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.001975)[0m   [0;1mUPDATE schema_info SET version = 5[0m
+  [4;35;1mSQL (0.000389)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateCategories (6)
+  [4;36;1mSQL (0.002079)[0m   [0;1mCREATE TABLE categories ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL, "url" varchar(255) DEFAULT NULL) [0m
+  [4;35;1mSQL (0.001958)[0m   [0mUPDATE schema_info SET version = 6[0m
+  [4;36;1mSQL (0.000481)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesEventResults (7)
+  [4;35;1mSQL (0.002185)[0m   [0mCREATE TABLE series_event_results ("id" INTEGER PRIMARY KEY NOT NULL, "rider_id" integer DEFAULT NULL, "series_event_id" integer DEFAULT NULL, "time_elapsed" float DEFAULT NULL, "rider_name" varchar(255) DEFAULT NULL, "rider_team" varchar(255) DEFAULT NULL, "rider_category" varchar(255) DEFAULT NULL, "vam" float DEFAULT NULL, "speed" float DEFAULT NULL, "score" float DEFAULT NULL) [0m
+  [4;36;1mSQL (0.001891)[0m   [0;1mUPDATE schema_info SET version = 7[0m
+  [4;35;1mSQL (0.000458)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateVolunteers (8)
+  [4;36;1mSQL (0.002458)[0m   [0;1mCREATE TABLE volunteers ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "rider_id" integer DEFAULT NULL) [0m
+  [4;35;1mSQL (0.001730)[0m   [0mUPDATE schema_info SET version = 8[0m
+  [4;36;1mSQL (0.000347)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateSeriesVolunteers (9)
+  [4;35;1mSQL (0.001941)[0m   [0mCREATE TABLE series_volunteers ("id" INTEGER PRIMARY KEY NOT NULL, "volunteer_id" integer DEFAULT NULL, "series_event_id" integer DEFAULT NULL) [0m
+  [4;36;1mSQL (0.001630)[0m   [0;1mUPDATE schema_info SET version = 9[0m
+  [4;35;1mSQL (0.000381)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to AddWeek (10)
+  [4;36;1mSQL (0.002168)[0m   [0;1mALTER TABLE series_events ADD "week_number" integer[0m
+  [4;35;1mSQL (0.007634)[0m   [0mVACUUM[0m
+  [4;36;1mSQL (0.001949)[0m   [0;1mUPDATE schema_info SET version = 10[0m
+  [4;35;1mSQL (0.000343)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000892)[0m   [0;1mSELECT name FROM sqlite_master WHERE type = 'table'[0m
+  [4;35;1mSQL (0.000090)[0m   [0mPRAGMA index_list(categories)[0m
+  [4;36;1mSQL (0.000099)[0m   [0;1mPRAGMA index_list(climbs)[0m
+  [4;35;1mSQL (0.000098)[0m   [0mPRAGMA index_list(riders)[0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mPRAGMA index_list(series)[0m
+  [4;35;1mSQL (0.000075)[0m   [0mPRAGMA index_list(series_event_results)[0m
+  [4;36;1mSQL (0.000067)[0m   [0;1mPRAGMA index_list(series_events)[0m
+  [4;35;1mSQL (0.000068)[0m   [0mPRAGMA index_list(series_volunteers)[0m
+  [4;36;1mSQL (0.000090)[0m   [0;1mPRAGMA index_list(teams)[0m
+  [4;35;1mSQL (0.000059)[0m   [0mPRAGMA index_list(volunteers)[0m
+
+
+Processing SeriesEventController#new (for 127.0.0.1 at 2007-11-27 16:09:09) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {"action"=>"new", "controller"=>"series_event", "series_id"=>"1"}
+Rendering  within layouts/application
+Rendering series_event/new
+Rendered series_event/_form (0.00393)
+Completed in 0.01778 (56 reqs/sec) | Rendering: 0.00713 (40%) | DB: 0.00000 (0%) | 200 OK [http://localhost/series_event/new?series_id=1]
+
+
+Processing SeriesEventController#new (for 127.0.0.1 at 2007-11-27 16:09:11) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {"action"=>"new", "controller"=>"series_event", "series_id"=>"1"}
+Rendering  within layouts/application
+Rendering series_event/new
+Rendered series_event/_form (0.00424)
+Completed in 0.01714 (58 reqs/sec) | Rendering: 0.00700 (40%) | DB: 0.00000 (0%) | 200 OK [http://localhost/series_event/new?series_id=1]
+
+
+Processing SeriesEventController#new (for 127.0.0.1 at 2007-11-27 16:09:21) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {"action"=>"new", "controller"=>"series_event", "series_id"=>"1"}
+Rendering  within layouts/series_event
+Rendering series_event/new
+Rendered series_event/_form (0.00578)
+Completed in 0.01909 (52 reqs/sec) | Rendering: 0.00916 (47%) | DB: 0.00000 (0%) | 200 OK [http://localhost/series_event/new?series_id=1]
+
+
+Processing SeriesEventController#new (for 127.0.0.1 at 2007-11-27 16:09:32) [GET]
+  Session ID: 31c26fc81d5f90126f75af6b8bde5341
+  Parameters: {"action"=>"new", "controller"=>"series_event", "series_id"=>"1"}
+Rendering  within layouts/application
+Rendering series_event/new
+Rendered series_event/_form (0.00575)
+Completed in 0.02754 (36 reqs/sec) | Rendering: 0.01025 (37%) | DB: 0.00000 (0%) | 200 OK [http://localhost/series_event/new?series_id=1]

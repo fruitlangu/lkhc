@@ -1,0 +1,26 @@
+<h1>Listing series</h1>
+
+ 
+<% for series in @series %>
+	<h1><%= series.year %></h1>
+	
+	<ul>
+		<% for event in series.series_events %>
+			<li><%= event.week_number %> - <%= event.climb.name %></li>
+		<% end %>
+	</ul>
+	
+  <tr>
+	<%= link_to 'Add Series Event', :action => "new", :controller => "series_event", :series_id => series.id %>
+    <%= link_to 'Show', :action => 'show', :id => series %>
+    <%= link_to 'Edit', :action => 'edit', :id => series %>
+    <%= link_to 'Destroy', { :action => 'destroy', :id => series }, :confirm => 'Are you sure?', :method => :post %>
+  </tr>
+<% end %>
+
+<%= link_to 'Previous page', { :page => @series_pages.current.previous } if @series_pages.current.previous %>
+<%= link_to 'Next page', { :page => @series_pages.current.next } if @series_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New series', :action => 'new' %>
