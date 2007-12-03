@@ -1,0 +1,4 @@
+
+1. implement basic data flow in all components.
+2. basic styling on all pages.
+3. complete import of all current data.

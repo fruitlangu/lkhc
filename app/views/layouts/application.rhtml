@@ -7,6 +7,27 @@
   <title>Climb: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'reset-fonts-grids' %>
   <%= stylesheet_link_tag 'base' %>
+	
+	<script type="text/javascript" charset="utf-8">
+		
+		function copy_time(from, to)
+		{
+			for (var i=1; i < 6; i++) 
+			{
+				new_from = from + "_" + i + "i";
+				new_to = to + "_" + i + "i";
+				
+				from_id = document.getElementById(new_from);
+				to_id = document.getElementById(new_to);
+				
+				if (from_id && to_id)
+				{
+					to_id.selectedIndex = from_id.selectedIndex;
+				}
+			};
+		}
+		
+	</script>
 </head>
 <body>
 
