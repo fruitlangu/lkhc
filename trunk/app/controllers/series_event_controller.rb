@@ -18,10 +18,26 @@ class SeriesEventController < ApplicationController
 
   def new
     @series_event = SeriesEvent.new
+    @series_id = params[:series_id]
   end
+  
+
 
   def create
-    @series_event = SeriesEvent.new(params[:series_event])
+    data = params[:series_event]
+    @series_event = SeriesEvent.new do |s|
+      s.series_id = data[:series_id]
+      s.week_number = data[:week_number]
+      s.coordinator = data[:coordinator]
+      s.cost = data[:cost]
+      s.staging_area_url = data[:staging_area_url]
+      s.registration_start = build_datetime_from_params(:registration_start, data)
+      s.registration_end = build_datetime_from_params(:registration_end, data)
+      s.event_start = build_datetime_from_params(:event_start, data)
+      s.scheduled_date = build_date_from_params(:scheduled_date, data)
+      s.climb_id = data[:climb_id]
+      s.blurb = data[:blurb]
+    end
     if @series_event.save
       flash[:notice] = 'SeriesEvent was successfully created.'
       redirect_to :action => 'list'
@@ -32,6 +48,7 @@ class SeriesEventController < ApplicationController
 
   def edit
     @series_event = SeriesEvent.find(params[:id])
+    @series_id = @series_event.series_id
   end
 
   def update

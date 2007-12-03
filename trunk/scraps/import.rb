@@ -9,7 +9,9 @@ if ARGV[0].nil? or not File.exists?(ARGV[0])
   exit 1
 end
 
+count = 0
 CSV::Reader.parse(File.open(ARGV[0], 'rb')) do |row|
+  count += 1
   number, name, gender, category, team = row
   next if number !~ /^\d+$/
   if Rider.find_by_lkhc_number(number).nil?
@@ -26,6 +28,8 @@ CSV::Reader.parse(File.open(ARGV[0], 'rb')) do |row|
     r.category = Category.find_or_create_by_name(category) unless category.nil?
     r.team = Team.find_or_create_by_name(team) unless team.nil?
     r.save
+    
+    puts "Created rider #{name} (##{number})"
     
   end
 end

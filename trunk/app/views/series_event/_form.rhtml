@@ -4,14 +4,15 @@
 <p><label for="series_event_scheduled_date">Scheduled date</label><br/>
 <%= date_select 'series_event', 'scheduled_date'  %></p>
 
-<p><label for="series_event_registration_start">Registration start</label><br/>
+<p><label for="series_event_registration_start">Registration start</label> <a href="#" onclick="copy_time('series_event_scheduled_date', 'series_event_registration_start')">copy from above</a>
+<br/>
 <%= datetime_select 'series_event', 'registration_start'  %></p>
 
-<p><label for="series_event_registration_end">Registration end</label><br/>
+<p><label for="series_event_registration_end">Registration end</label> <a href="#" onclick="copy_time('series_event_registration_start', 'series_event_registration_end')">copy from above</a><br/>
 <%= datetime_select 'series_event', 'registration_end'  %></p>
 
-<p><label for="series_event_event_start">Event start</label><br/>
-<%= datetime_select 'series_event', 'event_start'  %></p>
+<p><label for="series_event_event_start">Event start</label> <a href="#" onclick="copy_time('series_event_registration_end', 'series_event_event_start')">copy from above</a><br/>
+<%= date_select 'series_event', 'event_start'  %></p>
 
 <p><label for="series_event_cost">Cost</label><br/>
 <%= text_field 'series_event', 'cost'  %></p>
@@ -27,5 +28,12 @@
 
 <p><label for="series_event_week_number">Week number</label><br/>
 <%= text_field 'series_event', 'week_number'  %></p>
+
+<p><label for="series_event_climb_id">Climb</label><br/>
+<%= select("series_event", "climb_id", Climb.find(:all).collect { |c| [ c.title, c.id ] }) %></p>
+
+
+<input type="hidden" name="series_event[series_id]" value="<%= @series_id %>"/>
+
 <!--[eoform:series_event]-->
 
