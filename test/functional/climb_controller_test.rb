@@ -2,13 +2,13 @@ require File.dirname(__FILE__) + '/../test_helper'
 require 'climb_controller'
 
 # Re-raise errors caught by the controller.
-class ClimbController; def rescue_action(e) raise e end; end
+class Admin::ClimbController; def rescue_action(e) raise e end; end
 
-class ClimbControllerTest < Test::Unit::TestCase
+class Admin::ClimbControllerTest < Test::Unit::TestCase
   fixtures :climbs
 
   def setup
-    @controller = ClimbController.new
+    @controller = Admin::ClimbController.new
     @request    = ActionController::TestRequest.new
     @response   = ActionController::TestResponse.new
 
