@@ -1,20 +1,48 @@
-body {
-	background: #ffffff;
+/* @override http://localhost:3000/stylesheets/lkhc.css?1197243951 */
+
+/* @override http://localhost:3000/stylesheets/lkhc.css?1197243951 */
+
+/* @override http://localhost:3000/stylesheets/lkhc.css?1197243507 */
+
+/* @override http://localhost:3000/stylesheets/lkhc.css?1197242810 */
+
+/* @override http://localhost:3000/stylesheets/lkhc.css?1197241016 */
+
+html {
+
 }
-#banner {
-	border-bottom: 5px solid #4A5D64;
-	background: #4F4539;
+
+body {
+	background: #b0d2e6;
+}
+
+#doc4 {
+	background-image: url(/images/background-stripe.jpg);
 	color: white;
-	font-size: 200%;
-	height: 40px;
-	padding-top: 10px;
-	padding-left: 10px;
-	text-align: center;
+
+}
+
+#bd {
+
+	
+}
+
+#banner {
+
 }
 
 #blurb {
-	border: 1px dotted #999;
 	padding: 20px;
+	margin-left: 47px;
+	margin-right: 49px;
+	text-align: center;
+	font-style: italic;
+}
+
+#mainbody {
+	margin-left: 47px;
+	margin-right: 49px;
+	padding: 15px;
 }
 
 p {
@@ -34,7 +62,7 @@ h2 {
 }
 
 #leftpage {
-	padding-left: 20px;
+	padding-left: 10px;
 	
 }
 
@@ -47,13 +75,49 @@ h2 {
 }
 
 #menu {
+	border-top: 4px solid white;
+	border-bottom: 4px solid white;
+
+	margin-top: 5px;
+	margin-left: 47px;
+	margin-right: 49px;
+		background-image: url(/images/menu_slice.jpg);
+
+
+	
+	display:  block;
+}
+
+#inner_menu {
 	margin-left: auto;
-	margin-right: auto;
-	width: 100%;
+	margin-right:  auto;
 	text-align: center;
+	display: inline;
+}
+
+#menu ul {
+	list-style-type: none;
+	overflow: auto;	
 }
 
 #menu ul li {
-	float: left;
-	margin-left: 10px;
+	float:  left;
+}
+
+#menu ul li:hover {
+	float:  left;
+	background-image: url(/images/menu_highlighted.jpg);
+}
+
+
+#menu ul li a {
+	display:  block;
+	color: #004890;	
+	background-image: url(/images/menu_separator.jpg);
+	background-position: right;
+	background-repeat: no-repeat;
+	padding-left:  10px;
+	padding-right: 10px;
+	text-decoration: none;
+	line-height: 1.9em;
 }
